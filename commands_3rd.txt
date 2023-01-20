@@ -1,0 +1,329 @@
+    1  ssh 172.25.231.73
+    2  ls
+    3  vim /etc/yum.repos.d/jenkins.repo
+    4  rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    5  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    6  sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+    7  yum install code -y
+    8  code 
+    9  code --user-data-dir="~/.vscode-root"
+   10  code
+   11  code --user-data-dir="~/.vscode-root"
+   12  code --user-data-dir=~~/root
+   13  code --user-data-dir=~/root
+   14  code .
+   15  bash
+   16  nmcli connection modify ens192 connection.autoconnect yes
+   17  hostnamectl set-hostname master
+   18  bash
+   19  ssh 172.25.231.7
+   20  ssh 172.25.231.77
+   21  bash
+   22  systemctl stop firewalld
+   23  systemctl disable firewalld
+   24  vim /etc/sysconfig/selinux 
+   25  setenforce 0
+   26  vim /etc/fstab 
+   27  swapoff -a
+   28   modprobe overlay
+   29  modprobe br_netfilter
+   30  vim /etc/sysctl.d/kubernetes.conf
+   31  yum install git -y
+   32  git clone https://github.com/gauravkumar9130/deploy-kubernetes
+   33  cd deploy-kubernetes/crio_with_kubernetes/
+   34  ls
+   35  vim master.sh 
+   36  scp master.sh 172.25.231.77
+   37  scp master.sh 172.25.231.77:/root/
+   38  scp master.sh 172.25.231.73:/root/
+   39  ls
+   40  cd .
+   41  cd ..
+   42  rm -rf deploy-kubernetes/
+   43  ls
+   44  ifconfig
+   45  vim master.sh 
+   46  sh master.sh 
+   47  bash
+   48  code
+   49  ls
+   50  ls -a
+   51  rm -rf master.sh 
+   52  reboot
+   53  code
+   54  chown -R root:root /usr/share/code
+   55  code
+   56  code .
+   57  code --user-data-dir=~/root
+   58  code
+   59  code &
+   60  jobs
+   61  su - student
+   62  code --verbose
+   63  su - student
+   64  sudo chmod -R /usr/share/code
+   65  sudo chmod -R 777 /usr/share/code
+   66  su - student
+   67  chown -R student:student /usr/share/code/
+   68  su - student
+   69  code --verboe
+   70  code --verbose
+   71  code -h
+   72  yum remove code -y
+   73  visudo
+   74  su - student
+   75  ex
+   76  exit
+   77  passwd
+   78  exit
+   79  mkdir Kube-scripts
+   80  cd kube-scripts
+   81  ls
+   82  cd Kube-scripts/
+   83  CLEAR 
+   84  clear
+   85  vim app-server.yaml
+   86  vim ~````/.vimrrrrrc
+   87  vim ~/.vimrc
+   88  vim app-server.yaml
+   89  kubectl apply -f app-server.yaml 
+   90  kubectl get node
+   91  kubectl get pod
+   92  kubectl describe pod app-server1
+   93  kubectl get pod -o wide
+   94  vim app-server.yaml
+   95  kubectl delete -f app-server.yaml 
+   96  kubectl apply -f app-server.yaml 
+   97  kubectl get pod -o wide
+   98  kubectl get pod app-server1 --show-label
+   99  kubectl get pods app-server1 --show-label
+  100  kubectl get pods --show-label
+  101  kubectl get pod app-server1 --show-labels
+  102  kubectl get pods --show-labels
+  103  kubectl label pod app-server1 appserver=development
+  104  kubectl get pods --show-labels
+  105  kubectl label --overwrite pod app-server app-server=production
+  106  kubectl get pods --show-labels
+  107  kubectl label pod app-server app-server-
+  108  kubectl get pods --show-labels
+  109  kubectl get pods --selector run=development
+  110  kubectl get pods --selector run=app-seeerver
+  111  kubectl get pods --selector run=app-server
+  112  kubectl get pods --selector 'run in (app-server,kkkk)'
+  113   clear
+  114  vim rc.yaml
+  115  kubectl apply -f rc.yaml
+  116  kubectl get pods
+  117  vim rc.yaml
+  118  kubectl apply -f rc.yaml
+  119  kubectl get pods
+  120  vim rc.yaml
+  121  kubectl delete -f rc.yaml 
+  122  kubectl get pods
+  123  kubectl apply -f rc.yaml
+  124  kubectl get pods
+  125  kubectl get pod -o wide
+  126  kubectl exec -it rc-example-8z9jl --sh
+  127  kubectl exec -it rc-example-8z9jl -- sh
+  128  kubectl get pod -o wide
+  129  kubectl exec -it rc-example-8z9jl -- sh
+  130  vi rs.yaml
+  131  vim rs.yaml
+  132  kubectl apply -f rs.yaml 
+  133  vim rs.yaml
+  134  kubectl apply -f rs.yaml 
+  135  vim rs.yaml
+  136  kubectl apply -f rs.yaml
+  137  kubectl get pod -o wide
+  138  vim rs.yaml
+  139  kubectl get pod -o wide
+  140  kubectl get pod --show-labeeeels
+  141  kubectl get pod --show-labels
+  142  vim rs.yaml
+  143  kubectl get svc -A
+  144  kubectl exec -it rc-example-8z9jl -- sh
+  145  vim rs.yaml
+  146  vim myyapp.yaml
+  147  vim cluster-ip.yaml
+  148  kubectl create -f myyapp.yaml 
+  149  vim myyapp.yaml
+  150  kubectl create -f myyapp.yaml 
+  151  vim myyapp.yaml
+  152  kubectl create -f myyapp.yaml 
+  153  kubectl create -f cluster-ip.yaml 
+  154  vim cluster-ip.yaml
+  155  kubectl create -f cluster-ip.yaml 
+  156  kubectl get nodes -A
+  157  kubectl get PODS -A
+  158  kubectl get service
+  159  kubectl exec -it rs-webapp-l4lcv -- sh
+  160  clear
+  161  cp cluster-ip.yaml nodeport.yaml
+  162  vim nodeport.yaml 
+  163  kubectl create -f nodeport.yaml 
+  164  vim nodeport.yaml 
+  165  kubectl create -f nodeport.yaml 
+  166  kubectl get service
+  167  kubectl get node -o wide
+  168  cp app-server.yaml tor-appserver.yaml
+  169  vim tor-appserver.yaml 
+  170  kubectl taint nodes worker1 app=tester:NoSchedule
+  171  kubectl describe  nodes worker1
+  172  vim tor-appserver.yaml 
+  173  kubectl create -f tor-appserver.yaml 
+  174  kubectl get node -o wide
+  175  kubectl get pods -o wide
+  176  kubectl taint nodes worker1 app-
+  177  clear
+  178  kubectl label node worker2 size=large
+  179  cp app-server.yaml appserver-nodeS.yaml
+  180  vim appserver-nodeS.yaml 
+  181  kubectl create -f appserver-nodeS.yaml 
+  182  kubectl get pods
+  183  kubectl get pods -o wide
+  184  kubectl create -f namespace development
+  185  kubectl create  namespace development
+  186  kubectl get namespace
+  187  cp app-server.yaml new-pod.yaml
+  188  vim
+  189  vim new-pod.yaml 
+  190  kubectl create -f new-pod.yaml 
+  191  kubectl get pods -A
+  192  history >> commands.txt
+  193  history
+  194  clear 
+  195  cp app-server.yaml new-pod-secret.yaml
+  196  vim new-pod-secret.yaml 
+  197  kubectl create secret generic dbenv --from-literal=MSQL_USER=sa --from-literal=MYSQL_PASSWORD=sa123 --from-literal=MYSQL_ROOT_PASSWORD=root123
+  198  vim new-pod-secret.yaml 
+  199  kubectl create -f new-pod-secret.yaml 
+  200  vim new-pod-secret.yaml 
+  201  kubectl create -f new-pod-secret.yaml 
+  202  kubectl exec -it pod/secret-app-server1 --sh
+  203  kubectl exec -it pod/secret-app-server1 -- sh
+  204  vim new-pod-secret.yaml 
+  205  kubectl exec -it pod/secret-app-server1 -- sh
+  206  kubectl get secret
+  207  kubectl exec -it pod/secret-app-server1 -- sh
+  208  kubectl exec -it pod/secret-app-server1 --sh
+  209  vim new-pod-secret.yaml 
+  210  vim tor-appserver.yaml 
+  211  kubectl get pods app=tester
+  212  kubectl get pods app=dev
+  213  kubectl get pods run=test1
+  214  kubectl get pods run=test2222222
+  215  kubectl get pods run=test2
+  216  vim tor-appserver.yaml 
+  217  clear
+  218  pwd
+  219  vim deployment.yaml
+  220  cp cluster-ip.yaml deploy-clusterip.yaml
+  221  vi deploy-clusterip.yaml 
+  222  ls
+  223  kubectl create -f deployment.yaml 
+  224  vim deployment.yaml 
+  225  kubectl create -f deployment.yaml 
+  226  vim deployment.yaml 
+  227  kubectl create -f deployment.yaml 
+  228  kubectl create -f deploy-clusterip.yaml 
+  229  kubectl get pods -A
+  230  vim deployment.yaml 
+  231  kubectl delete -f deployment.yaml 
+  232  vim deployment.yaml 
+  233  kubectl create -f deployment.yaml 
+  234  kubectl get pods -A
+  235  kubectl get pods
+  236  kubectl delete -f deploy-clusterip.yaml 
+  237  kubectl create -f deploy-clusterip.yaml 
+  238  kubectl get service
+  239  clear
+  240  kubectl get service
+  241  curl 10.103.51.193:6000
+  242  clear
+  243  vim deployment.yaml 
+  244  kubectl set image deployment/deploy-dev web=quay.io/gauravkumar9130/production:v2 --record
+  245  kubectl rollout history deployment/deploy-dev
+  246  curl 10.103.51.193:6000
+  247  kubectl set image deployment/deploy-dev web=quay.io/gauravkumar9130/production:v3 --record
+  248  kubectl rollout history deployment/deploy-dev
+  249  cp commands.txt home/command.txt
+  250  cp commands.txt /root/command.txt
+  251  cp commands.txt /root/git-scripts/command.txt
+  252  cp app-server.yaml pv.yaml
+  253  vim pv.yaml 
+  254  vim persistant.yaml
+  255  kuberctl create -f persistant.yaml 
+  256  kubectl create -f persistant.yaml 
+  257  kubectl get pv
+  258  vim pvc.yaml
+  259  kubectl create -f pvc.yaml 
+  260  vim pvc.yaml
+  261  kubectl create -f pvc.yaml 
+  262  kubectl get pvc
+  263  ls
+  264  vim persistant.yaml 
+  265  cp app-server.yaml pod-storage.yaml
+  266  vim pod-storage.yaml 
+  267  kubectl create -f pod-storage.yaml 
+  268  vim pod-storage.yaml 
+  269  kubectl create -f pod-storage.yaml 
+  270  kubectl exec -it pod/storage-app-server1
+  271  kubectl exec -it storage-app-server1 -- sh
+  272  kubectl get pv -o wide
+  273  kubectl get pods -o wide
+  274  vim sa_account.yaml
+  275  kubectl create -f sa_account.yaml 
+  276  vim sa-pod.yaml
+  277  cp app-server.yaml pod-sa.yaml
+  278  vim pod-sa.yaml 
+  279  kubectl create -f pod-sa.yaml 
+  280  vim pod-sa.yaml 
+  281  kubectl create -f pod-sa.yaml 
+  282  kubectl get pods
+  283  kubectl get pods namespace=development
+  284  kubectl get pods -n development
+  285  kubectl api-resources
+  286  kubectl get api-resources --namespaced=false
+  287  kubectl get api-resources -- namespaced=false
+  288  kubectl api-resources --namespaced=false
+  289  clear
+  290  ls
+  291  wget https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
+  292  wget https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
+  293  vim namespace.yaml 
+  294  clear
+  295  kubectl create -f namespace.yaml 
+  296  kubectl create -f metallb.yaml 
+  297  kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+  298  vim config.yaml
+  299  kubectl create -f config.yaml 
+  300  vim config.yaml
+  301  kubectl create -f config.yaml 
+  302  vim config.yaml
+  303  kubectl create -f config.yaml 
+  304  kubectl get pods -n metallb-system
+  305  kubectl delete -f metallb.yaml 
+  306  vim metallb.yaml 
+  307* kubectl cr
+  308  kubectl get pods -n metallb-system
+  309  kubectl create -f metallb.yaml 
+  310  kubectl get pods -A
+  311  kubectl get namespace
+  312  kubectl get pods -n metallb-system
+  313  kubectl delete -f metallb.yaml 
+  314  vim metallb.yaml 
+  315  kubectl create -f metallb.yaml 
+  316  kubectl get pods -n metallb-system
+  317  kubectl delete -f metallb.yaml 
+  318  vim metallb.yaml 
+  319  kubectl create -f metallb.yaml 
+  320  kubectl get pods -n metallb-system
+  321  cp cluster-ip.yaml loadbalancer.yaml
+  322  vim loadbalancer.yaml 
+  323  kubectl create -f loadbalancer.yaml 
+  324  vim loadbalancer.yaml 
+  325  kubectl create -f loadbalancer.yaml 
+  326  kubectl get pods -n metallb-system
+  327  kubectl get svc
+  328  curl 172.25.232.166:6000
+  329  history >>commands_3rdday.tx
