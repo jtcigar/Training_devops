@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: app-server1-node
+spec: 
+ containers: 
+ - name: container1
+   image: nginx
+   imagePullPolicy: IfNotPresent
+ nodeSelector: 
+  size: large
+

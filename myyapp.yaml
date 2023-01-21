@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: rs-webapp
+spec:
+ replicas: 4
+ selector:
+  matchLabels:
+   app: web
+ template:
+  metadata:
+   name: web
+   labels:
+    app: web                                                                                                                                                                  
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/gauravkumar9130/nginxdemo
+

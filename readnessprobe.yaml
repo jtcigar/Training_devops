@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+ name: read-deploy-dev
+spec: 
+ replicas: 4
+ selector:
+  matchLabels:
+   test: readiness
+ template: 
+  metadata:  
+   labels:
+    test: readiness
+  spec:
+   containers:
+   - name: jenkins
+     image: quay.io/gauravkumar9130/jenkins
+     readinessProbe: 
+      httpGet:
+       path: /login
+       port: 8080
+      initialDelaySeconds: 5
+      periodSeconds: 5
+

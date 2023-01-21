@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+ name: rs-example
+spec:
+ replicas: 4
+ selector:
+  matchExpressions: 
+  - key: run
+    operator: In
+    values:
+    - test1
+    - test2
+ template:
+  metadata:
+   name: web
+   labels:
+    run: test2
+    run: test1
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/gauravkumar9130/mywebapp

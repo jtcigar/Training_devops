@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: sa-pp-server1
+ namespace: development
+spec: 
+ containers: 
+ - name: container1
+   image: nginx
+   imagePullPolicy: IfNotPresent
+ serviceAccountName: sa-account
+
